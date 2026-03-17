@@ -25,6 +25,7 @@ import "./style.css";
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Talks from "./components/Talks/Talks";
+import ChatWidget from "./components/ChatWidget";
 
 function App() {
   const [load, updateLoad] = useState(true);
@@ -62,6 +63,7 @@ function App() {
         </main>
 
         <Footer />
+        <ChatWidget />
         <Analytics /> {/* <--- Add this component at the bottom */}
         <SpeedInsights /> {/* <--- Add this component at the bottom */}
         
