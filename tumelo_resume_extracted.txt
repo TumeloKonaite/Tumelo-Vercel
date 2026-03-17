@@ -1,0 +1,40 @@
+Tshana Tumelo Konaite 
+Machine Learning Engineer 
+Email: tumelokonaite@gmail.com | GitHub: Link |  Portfolio: Link  |LinkedIn: Link 
+Professional Summary 
+AI Engineer with an MSc in Computational and Applied Mathematics specializing in machine 
+learning systems, statistical modelling, and LLM-powered AI solutions. Experienced in designing 
+and deploying production-ready AI systems, including RAG pipelines and multi-agent architectures 
+using Python and cloud-native infrastructure.  
+Education: MSc Computational and Applied Mathematics — University of the Witwatersrand  
+Tech Stack: Python, SQL | Pandas, NumPy, Scikit-learn | LangChain, OpenAI SDK | FastAPI | AWS, 
+Docker | Git, CI/CD 
+AWS Certifications:  Generative AI Developer – Professional | Machine Learning Engineer – 
+Associate | Solutions Architect – Associate  
+Professional Experience 
+ZenoStudy — Machine Learning Engineer (Dec 2025 – Present) 
+ Built scalable AI systems powered by LLMs to automate learning workflows and knowledge 
+generation. 
+ Evaluated foundation models using LLM-as-a-Judge and retrieval metrics (MRR, Recall@k, 
+Precision@k), alongside latency and cost benchmarking to optimize model selection. 
+ Developed production-grade Python APIs using FastAPI, enabling reliable and scalable AI-
+driven services. 
+ Designed RAG pipelines and multi-model orchestration systems, improving content generation 
+speed and enabling scalable deployment of AI applications. 
+Huawei Technologies — Data Analyst (Dec 2019 – Nov 2025) 
+ Developed an automated meeting intelligence pipeline using speech transcription and LLM-
+based summarization, reducing report turnaround time from 2 days to 30 minutes. 
+ Engineered a retrieval-based AI assistant enabling new team members to query internal 
+datasets conversationally, improving knowledge access and onboarding efficiency. 
+ Automated geospatial data transformations, significantly accelerating planning cycles and 
+reporting turnaround times. 
+ Built a machine learning model for telecom infrastructure optimization, identifying cellular 
+towers requiring upgrades using signal strength, latency, and throughput data. 
+Projects 
+ Built an AWS-powered multi-agent pricing system that evaluates marketplace listings using 
+ensemble models to estimate fair value and identify underpriced products. 
+ Designed a predictive analytics model for customer churn, analyzing customer behavior 
+patterns to identify high-risk users and support targeted retention strategies. 
+ Built a healthcare AI application that converts doctor consultation notes into structured medical 
+summaries, actionable next steps, and patient-ready email communications using real-time AI 
+generation. 

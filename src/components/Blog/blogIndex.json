@@ -1,0 +1,42 @@
+[
+  {
+    "id": "how-to-build-python-packages",
+    "file": "how-to-build-python-packages.md",
+    "title": "How I Learned to Build My Own Python Libraries (From Curiosity to Real Work)",
+    "date": "2025-12-23T00:00:00.000Z",
+    "tags": [
+      "open source",
+      "systems",
+      "python"
+    ],
+    "summary": "creating from 1st principles"
+  },
+  {
+    "id": "modern-data-scientist-roadmap",
+    "file": "modern-data-scientist-roadmap.md",
+    "title": "The Modern Data Scientist: A Roadmap for the Age of AI Agents",
+    "date": "2026-03-06T00:00:00.000Z",
+    "tags": [
+      "career",
+      "data science",
+      "mlops",
+      "ai agents",
+      "south africa"
+    ],
+    "summary": "The job hasn't disappeared. The mental model has changed. Here's what the roadmap looks like for data scientists and engineers entering — or navigating — the AI agent era, with a South African lens."
+  },
+  {
+    "id": "ubunye-engine-ai-ecosystem",
+    "file": "ubunye-engine-ai-ecosystem.md",
+    "title": "Ubunye Engine: One Framework, One Convention, One CLI — Why Unity Is the Real Deliverable",
+    "date": "2026-03-05T00:00:00.000Z",
+    "tags": [
+      "open source",
+      "engineering",
+      "python",
+      "mlops",
+      "agentic ai"
+    ],
+    "summary": "A technical memoir on building Ubunye Engine — the real story of broken imports, silent CI failures, and the slow accumulation of something that actually works."
+  }
+]
