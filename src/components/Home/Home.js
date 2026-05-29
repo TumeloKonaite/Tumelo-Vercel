@@ -37,6 +37,9 @@ function Home() {
               </div>
 
               <div className="hero-actions">
+                <Link to="/assistant" className="hero-action-primary">
+                  Talk to my bot
+                </Link>
                 <Link to="/project" className="hero-action-primary">
                   View Projects
                 </Link>
