@@ -12,45 +12,49 @@ function AboutCard() {
             <span className="purple">Johannesburg, South Africa</span>.
             <br />
             <br />
-            I am a <span className="purple">Machine Learning Engineer</span> with an MSc in
-            Computational and Applied Mathematics from the University of the Witwatersrand.
-            My focus is building practical AI systems, including LLM-powered solutions,
-            retrieval-augmented generation, and production APIs.
+            I am a <span className="purple">Data Scientist, AI Engineer, and Software Engineer</span> with
+            an MSc in Computational and Applied Mathematics from the University of the Witwatersrand.
+            I build end-to-end systems that combine analytics, machine learning, artificial intelligence,
+            and modern software engineering into scalable, production-ready products.
           </p>
 
           <ul>
             <li className="about-activity">
               <ImPointRight /> <span className="purple">ZenoStudy (Dec 2025 - Present)</span>:
-              building scalable AI systems for learning workflows, evaluating foundation models,
-              and delivering production-ready FastAPI services.
+              building AI-powered educational platforms, backend systems, and production-ready services for
+              learning experiences, support automation, and digital products such as BeautyVerse.
             </li>
             <br />
             <li className="about-activity">
               <ImPointRight /> <span className="purple">Huawei Technologies (Dec 2019 - Nov 2025)</span>:
-              delivered meeting-intelligence automation, retrieval-based assistants,
+              delivered predictive analytics, meeting-intelligence automation, retrieval-based assistants,
               geospatial data pipelines, and telecom optimization models.
             </li>
           </ul>
 
           <p style={{ textAlign: "justify" }}>
-            I am AWS-certified in Generative AI, Machine Learning Engineering, and Solutions Architecture.
-            I enjoy designing systems that are measurable, maintainable, and useful for real teams.
+            My experience spans predictive analytics, RAG systems, agentic AI applications, backend platform
+            development, API engineering, and cloud-native deployment. I enjoy designing modular architectures,
+            evaluating technology trade-offs, and building systems that balance performance, cost, and operational simplicity.
           </p>
 
           <ul>
             <li className="about-activity">
-              <ImPointRight /> Multi-agent AI pricing systems on AWS
+              <ImPointRight /> AI-powered educational platforms
             </li>
             <li className="about-activity">
-              <ImPointRight /> Customer churn prediction and retention analytics
+              <ImPointRight /> Retrieval-Augmented Generation and agentic AI systems
             </li>
             <li className="about-activity">
-              <ImPointRight /> Healthcare note-to-summary and action-generation workflows
+              <ImPointRight /> Customer support automation and marketplace backends
+            </li>
+            <li className="about-activity">
+              <ImPointRight /> Predictive analytics, machine learning, and cloud-native APIs
             </li>
           </ul>
 
           <p style={{ color: "rgb(155 126 172)" }}>
-            "Build AI that works in production, not only in demos."
+            "Build data and AI systems that create real value in production."
           </p>
           <footer className="blockquote-footer">Tumelo Konaite</footer>
         </blockquote>

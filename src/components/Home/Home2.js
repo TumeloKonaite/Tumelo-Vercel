@@ -12,41 +12,43 @@ function Home2() {
           <Col md={8} className="home-about-description">
             <div className="observatory-label">System profile</div>
             <h1 style={{ fontSize: "2.6em" }}>
-              A software engineer&apos;s <span className="purple">AI observatory</span>
+              A software engineer&apos;s <span className="purple">AI portfolio</span>
             </h1>
 
             <p className="home-about-body">
-              I am <span className="purple">Tumelo Konaite</span>, a Machine Learning Engineer focused on
-              building production AI systems that solve practical problems with measurable behavior.
+              I am <span className="purple">Tumelo Konaite</span>, a <span className="purple">Data Scientist,
+              AI Engineer, and Software Engineer</span> focused on building production-ready systems that solve
+              practical problems and create measurable business value.
               <br />
               <br />
-              I hold an <span className="purple">MSc in Computational and Applied Mathematics</span> from
-              the University of the Witwatersrand, and I specialize in <span className="purple">LLM-powered
-              applications</span>, <span className="purple">RAG pipelines</span>, and cloud-ready machine
-              learning services.
+              My work spans <span className="purple">data science</span>, <span className="purple">predictive
+              analytics</span>, <span className="purple">Retrieval-Augmented Generation</span>, <span className="purple">agentic AI systems</span>,
+              backend platform development, and cloud-native applications.
               <br />
               <br />
-              My day-to-day work spans model evaluation, API engineering, and end-to-end deployment.
-              I care about quality, reliability, and creating systems teams can trust in production.
+              I specialize in taking solutions beyond experimentation and into production, whether that means
+              educational platforms, customer support automation, marketplace backends, predictive models,
+              or enterprise AI applications.
             </p>
 
             <ul>
               <li className="about-activity">
-                <ImPointRight /> Designing scalable AI workflows with Python, FastAPI, and AWS.
+                <ImPointRight /> Building end-to-end systems that combine analytics, machine learning, AI, and software engineering.
               </li>
               <br />
               <li className="about-activity">
-                <ImPointRight /> Evaluating foundation models with retrieval and quality metrics.
+                <ImPointRight /> Designing modular architectures, APIs, and cloud-native services that are maintainable and scalable.
               </li>
               <br />
               <li className="about-activity">
-                <ImPointRight /> Turning business and operational data into deployable ML products.
+                <ImPointRight /> Translating data-driven ideas into production systems aligned with real business objectives.
               </li>
             </ul>
 
             <p className="home-about-body">
-              On this site, I share my work across machine learning engineering, applied AI, and product-focused
-              experimentation.
+              With an <span className="purple">MSc in Computational and Applied Mathematics</span>, I combine
+              quantitative modelling, statistical analysis, and rigorous problem-solving with practical product
+              development and software engineering.
             </p>
           </Col>
 
@@ -63,22 +65,22 @@ function Home2() {
           <Col md={4}>
             <div className="insight-panel">
               <span className="signal-label">Engineering stance</span>
-              <h3>Useful over theatrical</h3>
-              <p>Interfaces, models, and APIs should create confidence quickly and hold up under production pressure.</p>
+              <h3>Data to product</h3>
+              <p>I focus on turning data, models, and AI workflows into products that can be deployed, measured, and improved.</p>
             </div>
           </Col>
           <Col md={4}>
             <div className="insight-panel">
               <span className="signal-label">What I optimize</span>
-              <h3>Signal quality</h3>
-              <p>Retrieval relevance, evaluation coverage, latency, and clear product behavior matter more than hype.</p>
+              <h3>Business-aligned systems</h3>
+              <p>Performance, maintainability, operational simplicity, and clear outcomes matter more than novelty alone.</p>
             </div>
           </Col>
           <Col md={4}>
             <div className="insight-panel">
               <span className="signal-label">Build philosophy</span>
-              <h3>Intelligence with observability</h3>
-              <p>Good AI systems expose their assumptions, fail clearly, and remain maintainable by the team that owns them.</p>
+              <h3>Production over prototypes</h3>
+              <p>The goal is not just intelligent demos, but reliable software platforms teams can own, scale, and trust.</p>
             </div>
           </Col>
         </Row>
