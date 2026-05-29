@@ -11,7 +11,7 @@ function ChatWidget() {
         <div className="chat-widget-panel">
           <AssistantPanel
             variant="widget"
-            title="Talk to Thabang AI"
+            title="Talk to Tumelo AI"
             subtitle="Text or voice, right from the portfolio."
             showPromptSuggestions={false}
             onClose={() => setIsOpen(false)}
