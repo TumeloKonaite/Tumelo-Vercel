@@ -8,6 +8,7 @@ import { AiFillGithub } from "react-icons/ai";
 import { FaLinkedinIn } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
 import { CgWebsite } from "react-icons/cg";
+import { Link } from "react-router-dom";
 import { SOCIAL_LINKS } from "../../constants";
 
 function Home() {
@@ -16,44 +17,95 @@ function Home() {
       <Container fluid className="home-section" id="home">
         <Particle />
         <Container className="home-content">
-          <Row>
+          <Row className="align-items-center gy-5">
             <Col md={7} className="home-header">
-              <h1 style={{ paddingBottom: 15 }} className="heading">
-                Hi There!{" "}
-                <span className="wave" role="img" aria-labelledby="wave">
-                  o/
-                </span>
+              <div className="observatory-label">Observatory feed: production AI systems online</div>
+              <h1 className="hero-title">
+                Tumelo Konaite
+                <span className="hero-title-accent">Machine learning systems with signal, structure, and intent.</span>
               </h1>
+              <p className="hero-summary">
+                I build applied AI products that turn messy information into dependable software:
+                retrieval systems, evaluation loops, automation pipelines, and cloud-ready APIs.
+              </p>
 
-              <h1 className="heading-name">
-                I'M
-                <strong className="main-name"> TUMELO KONAITE</strong>
-              </h1>
+              <div className="hero-type-shell">
+                <span className="hero-kicker">Tracking now</span>
+                <div className="hero-typewriter">
+                  <Type />
+                </div>
+              </div>
 
-              <div style={{ padding: 50, textAlign: "left" }}>
-                <Type />
+              <div className="hero-actions">
+                <Link to="/project" className="hero-action-primary">
+                  View Projects
+                </Link>
+                <Link to="/about" className="hero-action-secondary">
+                  System Profile
+                </Link>
+                <a href={`mailto:${SOCIAL_LINKS.email}`} className="hero-action-secondary">
+                  Open Contact
+                </a>
+              </div>
+
+              <div className="hero-metrics">
+                <div className="hero-metric-card">
+                  <span className="hero-metric-value">LLM + RAG</span>
+                  <span className="hero-metric-label">Production application focus</span>
+                </div>
+                <div className="hero-metric-card">
+                  <span className="hero-metric-value">Python / AWS</span>
+                  <span className="hero-metric-label">Shipping stack</span>
+                </div>
+                <div className="hero-metric-card">
+                  <span className="hero-metric-value">Evaluation-first</span>
+                  <span className="hero-metric-label">How I keep systems trustworthy</span>
+                </div>
               </div>
             </Col>
 
-            <Col md={5} style={{ paddingBottom: 20 }}>
-              <img
-                src={homeLogo}
-                alt="home pic"
-                className="img-fluid"
-                style={{ maxHeight: "450px" }}
-              />
+            <Col md={5} className="hero-visual-column">
+              <div className="observatory-panel">
+                <div className="observatory-panel-header">
+                  <span>Neural Observatory</span>
+                  <span>Live</span>
+                </div>
+                <div className="observatory-visual">
+                  <div className="observatory-ring observatory-ring-one"></div>
+                  <div className="observatory-ring observatory-ring-two"></div>
+                  <img
+                    src={homeLogo}
+                    alt="home pic"
+                    className="img-fluid observatory-illustration"
+                  />
+                </div>
+                <div className="signal-grid">
+                  <div className="signal-card">
+                    <span className="signal-label">Primary domains</span>
+                    <strong>Applied AI, MLOps, retrieval</strong>
+                  </div>
+                  <div className="signal-card">
+                    <span className="signal-label">Operating mode</span>
+                    <strong>Research depth with engineering discipline</strong>
+                  </div>
+                  <div className="signal-card">
+                    <span className="signal-label">Output</span>
+                    <strong>Systems teams can deploy and maintain</strong>
+                  </div>
+                </div>
+              </div>
             </Col>
           </Row>
         </Container>
       </Container>
       <Home2 />
 
-      <Container>
-        <Row style={{ paddingTop: "50px", paddingBottom: "80px" }}>
+      <Container className="home-social-shell">
+        <Row style={{ paddingTop: "20px", paddingBottom: "80px" }}>
           <Col md={12} className="home-about-social">
-            <h1>Find Me On</h1>
+            <h1>Connect to the Network</h1>
             <p>
-              Feel free to <span className="purple">connect </span>with me
+              Direct lines for collaboration, technical discussion, and portfolio walkthroughs.
             </p>
             <ul className="home-about-social-links">
               <li className="social-icons">

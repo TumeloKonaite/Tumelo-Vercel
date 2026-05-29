@@ -8,15 +8,16 @@ function Home2() {
   return (
     <Container fluid className="home-about-section" id="about">
       <Container>
-        <Row>
+        <Row className="align-items-center gy-5">
           <Col md={8} className="home-about-description">
+            <div className="observatory-label">System profile</div>
             <h1 style={{ fontSize: "2.6em" }}>
-              LET ME <span className="purple"> INTRODUCE </span> MYSELF
+              A software engineer&apos;s <span className="purple">AI observatory</span>
             </h1>
 
             <p className="home-about-body">
               I am <span className="purple">Tumelo Konaite</span>, a Machine Learning Engineer focused on
-              building production AI systems that solve practical problems.
+              building production AI systems that solve practical problems with measurable behavior.
               <br />
               <br />
               I hold an <span className="purple">MSc in Computational and Applied Mathematics</span> from
@@ -50,9 +51,35 @@ function Home2() {
           </Col>
 
           <Col md={4} className="myAvtar">
-            <Tilt>
-              <img src={myImg} className="img-fluid" alt="avatar" />
+            <Tilt tiltMaxAngleX={8} tiltMaxAngleY={8} glareEnable={true} glareMaxOpacity={0.15} scale={1.02}>
+              <div className="avatar-frame">
+                <img src={myImg} className="img-fluid" alt="avatar" />
+              </div>
             </Tilt>
+          </Col>
+        </Row>
+
+        <Row className="insight-row">
+          <Col md={4}>
+            <div className="insight-panel">
+              <span className="signal-label">Engineering stance</span>
+              <h3>Useful over theatrical</h3>
+              <p>Interfaces, models, and APIs should create confidence quickly and hold up under production pressure.</p>
+            </div>
+          </Col>
+          <Col md={4}>
+            <div className="insight-panel">
+              <span className="signal-label">What I optimize</span>
+              <h3>Signal quality</h3>
+              <p>Retrieval relevance, evaluation coverage, latency, and clear product behavior matter more than hype.</p>
+            </div>
+          </Col>
+          <Col md={4}>
+            <div className="insight-panel">
+              <span className="signal-label">Build philosophy</span>
+              <h3>Intelligence with observability</h3>
+              <p>Good AI systems expose their assumptions, fail clearly, and remain maintainable by the team that owns them.</p>
+            </div>
           </Col>
         </Row>
       </Container>

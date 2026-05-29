@@ -6,43 +6,66 @@ function Particle() {
     <Particles
       id="tsparticles"
       params={{
+        fpsLimit: 60,
         particles: {
+          color: {
+            value: ["#7dd3fc", "#67e8f9", "#6ee7b7", "#f0f9ff"],
+          },
           number: {
-            value: 160,
+            value: 95,
             density: {
               enable: true,
-              value_area: 1500,
+              value_area: 1100,
             },
           },
           line_linked: {
-            enable: false,
-            opacity: 0.03,
+            enable: true,
+            color: "#7dd3fc",
+            distance: 150,
+            opacity: 0.2,
+            width: 1,
           },
           move: {
-            direction: "right",
-            speed: 0.05,
+            direction: "none",
+            enable: true,
+            out_mode: "bounce",
+            random: true,
+            speed: 0.35,
           },
           size: {
-            value: 1,
+            value: 2,
+            random: true,
           },
           opacity: {
+            value: 0.45,
             anim: {
               enable: true,
-              speed: 1,
-              opacity_min: 0.05,
+              speed: 0.8,
+              opacity_min: 0.12,
             },
           },
         },
         interactivity: {
           events: {
+            onhover: {
+              enable: true,
+              mode: "grab",
+            },
             onclick: {
               enable: true,
-              mode: "push",
+              mode: "repulse",
             },
           },
           modes: {
-            push: {
-              particles_nb: 1,
+            grab: {
+              distance: 180,
+              line_linked: {
+                opacity: 0.6,
+              },
+            },
+            repulse: {
+              distance: 140,
+              duration: 0.4,
             },
           },
         },
