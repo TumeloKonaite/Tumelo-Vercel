@@ -41,8 +41,12 @@ function NavBar() {
       className={navColour ? "sticky" : "navbar"}
     >
       <Container>
-        <Navbar.Brand as={Link} to="/" className="d-flex">
+        <Navbar.Brand as={Link} to="/" className="brand-lockup">
           <img src={logo} className="img-fluid logo" alt="brand" />
+          <div className="brand-copy">
+            <span className="brand-name">Tumelo Konaite</span>
+            <span className="brand-tag">AI Systems Observatory</span>
+          </div>
         </Navbar.Brand>
         <Navbar.Toggle
           aria-controls="responsive-navbar-nav"

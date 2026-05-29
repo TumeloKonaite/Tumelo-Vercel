@@ -1,11 +1,20 @@
-/* @import url('https://fonts.googleapis.com/css2?family=Outfit&display=swap'); */
+@import url("https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=Space+Grotesk:wght@400;500;700&family=Space+Mono:wght@400;700&display=swap");
 
-@import url("https://fonts.googleapis.com/css2?family=Outfit&family=PT+Mono&display=swap");
+html,
+body,
+#root {
+  min-height: 100%;
+}
 
 body {
   margin: 0;
-  font-family: "PT Mono", monospace !important;
+  font-family: "Space Grotesk", sans-serif !important;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-image: linear-gradient(to left, rgb(27 20 41), rgb(20 15 35));
+  background: #050b16;
+  color: #e6f0ff;
+}
+
+code {
+  font-family: "Space Mono", monospace;
 }

@@ -10,7 +10,7 @@ function ChatWidget() {
     {
       id: "welcome",
       role: "assistant",
-      content: "Hi. Ask me anything and I will help.",
+      content: "Observatory node online. Ask about my projects, experience, or how I build AI systems.",
     },
   ]);
   const messagesEndRef = useRef(null);
@@ -94,8 +94,8 @@ function ChatWidget() {
         <div className="chat-widget-panel">
           <div className="chat-widget-header">
             <div>
-              <strong>AI Assistant</strong>
-              <div className="chat-widget-subtitle">Powered by your chatbot backend</div>
+              <strong>Observatory Assistant</strong>
+              <div className="chat-widget-subtitle">Query the portfolio in natural language</div>
             </div>
             <button
               type="button"
