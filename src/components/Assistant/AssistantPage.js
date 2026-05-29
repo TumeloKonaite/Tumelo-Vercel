@@ -9,11 +9,11 @@ function AssistantPage() {
         <div className="assistant-page-hero">
           <span className="assistant-page-kicker">Portfolio chat</span>
           <h1 className="assistant-page-title">
-            Talk to <span>Thabang AI</span>
+            Talk to <span>Tumelo AI</span>
           </h1>
           <p className="assistant-page-summary">
-            Ask the portfolio bot about projects, experience, systems design,
-            technical depth, or how I approach building production AI.
+            Ask me about projects, experience, systems design, technical depth,
+            or how I approach building production AI.
           </p>
         </div>
 

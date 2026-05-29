@@ -6,11 +6,11 @@ const WELCOME_MESSAGE = {
   id: "welcome",
   role: "assistant",
   content:
-    "AI assistant online. Ask about my projects, experience, or how I build AI systems.",
+    "Hi, I'm Tumelo. Ask me about my projects, experience, or how I build AI systems.",
 };
 
 function AssistantPanel({
-  title = "Talk to Thabang AI",
+  title = "Talk to Tumelo AI",
   subtitle = "Ask about my work, projects, systems thinking, or how I approach production AI.",
   promptSuggestions = ASSISTANT_PROMPTS,
   showPromptSuggestions = true,
