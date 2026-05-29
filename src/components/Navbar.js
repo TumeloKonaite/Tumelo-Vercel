@@ -10,8 +10,8 @@ import { ImBlog } from "react-icons/im";
 import {
   AiFillStar,
   AiOutlineHome,
+  AiOutlineMessage,
   AiOutlineFundProjectionScreen,
-  AiOutlineBook,
   AiOutlineUser,
 } from "react-icons/ai";
 import { SOCIAL_LINKS } from "../constants";
@@ -97,8 +97,8 @@ function NavBar() {
             </Nav.Item>
 
             <Nav.Item>
-              <Nav.Link as={Link} to="/blog" onClick={() => updateExpanded(false)}>
-                <AiOutlineBook style={{ marginBottom: "2px" }} /> Blog
+              <Nav.Link as={Link} to="/assistant" onClick={() => updateExpanded(false)}>
+                <AiOutlineMessage style={{ marginBottom: "2px" }} /> Talk to AI
               </Nav.Link>
             </Nav.Item>
 
