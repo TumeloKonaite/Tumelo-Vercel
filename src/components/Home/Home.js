@@ -19,14 +19,14 @@ function Home() {
         <Container className="home-content">
           <Row className="align-items-center gy-5">
             <Col md={7} className="home-header">
-              <div className="observatory-label">Observatory feed: production AI systems online</div>
+              <div className="observatory-label">Live profile: production AI systems online</div>
               <h1 className="hero-title">
                 Tumelo Konaite
                 <span className="hero-title-accent">Machine learning systems with signal, structure, and intent.</span>
               </h1>
               <p className="hero-summary">
-                I build applied AI products that turn messy information into dependable software:
-                retrieval systems, evaluation loops, automation pipelines, and cloud-ready APIs.
+                I build production-ready products at the intersection of data science, artificial intelligence,
+                and software engineering, turning analytics, machine learning, and AI into dependable systems.
               </p>
 
               <div className="hero-type-shell">
@@ -50,24 +50,24 @@ function Home() {
 
               <div className="hero-metrics">
                 <div className="hero-metric-card">
-                  <span className="hero-metric-value">LLM + RAG</span>
-                  <span className="hero-metric-label">Production application focus</span>
+                  <span className="hero-metric-value">Data + AI</span>
+                  <span className="hero-metric-label">From analytics and modelling to intelligent applications</span>
                 </div>
                 <div className="hero-metric-card">
-                  <span className="hero-metric-value">Python / AWS</span>
-                  <span className="hero-metric-label">Shipping stack</span>
+                  <span className="hero-metric-value">Platform delivery</span>
+                  <span className="hero-metric-label">Backend systems, APIs, and cloud-native products</span>
                 </div>
                 <div className="hero-metric-card">
-                  <span className="hero-metric-value">Evaluation-first</span>
-                  <span className="hero-metric-label">How I keep systems trustworthy</span>
+                  <span className="hero-metric-value">Production-first</span>
+                  <span className="hero-metric-label">Scalable, maintainable, and business-aligned systems</span>
                 </div>
               </div>
             </Col>
 
             <Col md={5} className="hero-visual-column">
-              <div className="observatory-panel">
-                <div className="observatory-panel-header">
-                  <span>Neural Observatory</span>
+                <div className="observatory-panel">
+                  <div className="observatory-panel-header">
+                  <span>Neural Systems View</span>
                   <span>Live</span>
                 </div>
                 <div className="observatory-visual">
@@ -82,15 +82,15 @@ function Home() {
                 <div className="signal-grid">
                   <div className="signal-card">
                     <span className="signal-label">Primary domains</span>
-                    <strong>Applied AI, MLOps, retrieval</strong>
+                    <strong>Data science, AI engineering, software platforms</strong>
                   </div>
                   <div className="signal-card">
                     <span className="signal-label">Operating mode</span>
-                    <strong>Research depth with engineering discipline</strong>
+                    <strong>Quantitative thinking with production engineering discipline</strong>
                   </div>
                   <div className="signal-card">
                     <span className="signal-label">Output</span>
-                    <strong>Systems teams can deploy and maintain</strong>
+                    <strong>Products teams can scale, operate, and trust</strong>
                   </div>
                 </div>
               </div>
