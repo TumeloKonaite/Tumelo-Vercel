@@ -17,6 +17,7 @@ Live Demo: [https://frontend-kappa-sandy-5ojkp7a7w8.vercel.app/](https://fronten
 - Project showcase focused on practical AI systems
 - Resume page with downloadable CV
 - Contact links for GitHub, LinkedIn, and email
+- Work With Me contact form proxied through a serverless endpoint
 - Floating chatbot widget connected to an external chatbot backend
 
 ## Chatbot Integration
@@ -43,6 +44,35 @@ Set these in your Vercel project:
 - `CHATBOT_BACKEND_AUTH_TOKEN` (optional): API token sent to backend
 - `CHATBOT_BACKEND_AUTH_HEADER` (optional): Header name for token, default is `Authorization`
 - `CHATBOT_BACKEND_TIMEOUT_MS` (optional): Timeout in milliseconds, default is `30000`
+- `CONTACT_BACKEND_URL` (required for contact form): Backend contact endpoint
+- `CONTACT_BACKEND_AUTH_TOKEN` (optional): API token sent to backend
+- `CONTACT_BACKEND_AUTH_HEADER` (optional): Header name for token, default is `Authorization`
+- `CONTACT_BACKEND_TIMEOUT_MS` (optional): Timeout in milliseconds, default is `30000`
+
+## Contact Form Integration
+
+The site includes:
+- Frontend form: `src/components/About/ContactForm.js`
+- Secure proxy function: `api/contact.js`
+
+Flow:
+1. User submits the form on the About page.
+2. Browser calls `/api/contact` on the same Vercel deployment.
+3. `/api/contact` forwards to your external backend contact route.
+4. The response is returned to the page as success or error feedback.
+
+Expected backend contract:
+
+```json
+{
+  "first_name": "Jane",
+  "last_name": "Doe",
+  "email": "jane@example.com",
+  "phone": "+27821234567",
+  "subject": "Job inquiry",
+  "message": "I would like to discuss a role with you."
+}
+```
 
 ## Project Structure
 

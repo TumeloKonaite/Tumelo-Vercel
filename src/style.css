@@ -700,6 +700,187 @@ input:focus {
   margin-right: 0.45rem;
 }
 
+.work-with-me-row {
+  align-items: start;
+  row-gap: 2rem;
+  padding: 3.75rem 0 4.5rem;
+}
+
+.work-with-me-copy {
+  text-align: left;
+}
+
+.work-with-me-intro {
+  margin: 1.6rem 0 0;
+  color: var(--text-soft);
+  font-size: 1.02rem;
+  line-height: 1.8;
+}
+
+.contact-form-card {
+  position: relative;
+  overflow: hidden;
+  padding: 1.65rem;
+  border: 1px solid rgba(125, 211, 252, 0.16);
+  border-radius: 1.6rem;
+  background: linear-gradient(180deg, rgba(11, 24, 45, 0.9), rgba(7, 14, 26, 0.96));
+  box-shadow: var(--panel-shadow);
+  text-align: left;
+}
+
+.contact-form-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at top right, rgba(34, 211, 238, 0.14), transparent 0 32%),
+    linear-gradient(135deg, rgba(255, 255, 255, 0.03), transparent 28%);
+  pointer-events: none;
+}
+
+.contact-form-header,
+.contact-form-shell {
+  position: relative;
+  z-index: 1;
+}
+
+.contact-form-header h2 {
+  margin: 0.65rem 0 0.8rem;
+  font-family: "Sora", sans-serif;
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  line-height: 1.15;
+}
+
+.contact-form-header p {
+  margin: 0;
+  color: var(--text-soft);
+  line-height: 1.75;
+}
+
+.contact-form-kicker {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.45rem 0.8rem;
+  border-radius: 999px;
+  border: 1px solid var(--border-soft);
+  background: rgba(125, 211, 252, 0.08);
+  color: var(--accent);
+  font-family: "Space Mono", monospace;
+  font-size: 0.74rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.contact-form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.contact-field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+}
+
+.contact-field span {
+  color: var(--text-main);
+  font-size: 0.94rem;
+  font-weight: 600;
+}
+
+.contact-required-mark {
+  color: #fda4af;
+  font-weight: 700;
+}
+
+.contact-field-full {
+  grid-column: 1 / -1;
+}
+
+.contact-field input,
+.contact-field textarea {
+  width: 100%;
+  border: 1px solid rgba(125, 211, 252, 0.18);
+  border-radius: 1rem;
+  padding: 0.9rem 1rem;
+  color: var(--text-main);
+  background: rgba(125, 211, 252, 0.04);
+  transition: border-color 0.22s ease, background 0.22s ease, box-shadow 0.22s ease;
+}
+
+.contact-field textarea {
+  min-height: 10rem;
+  resize: vertical;
+}
+
+.contact-field input::placeholder,
+.contact-field textarea::placeholder {
+  color: var(--text-muted);
+}
+
+.contact-field input:focus,
+.contact-field textarea:focus {
+  border-color: rgba(125, 211, 252, 0.42);
+  background: rgba(125, 211, 252, 0.08);
+  box-shadow: 0 0 0 3px rgba(34, 211, 238, 0.12) !important;
+}
+
+.contact-form-footer {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-top: 1.3rem;
+}
+
+.contact-form-feedback {
+  flex: 1 1 16rem;
+}
+
+.contact-form-note,
+.contact-form-status {
+  margin: 0;
+  line-height: 1.7;
+}
+
+.contact-form-note {
+  color: var(--text-muted);
+}
+
+.contact-form-status-success {
+  color: #86efac;
+}
+
+.contact-form-status-error {
+  color: #fda4af;
+}
+
+.contact-submit-button {
+  min-width: 12rem;
+  min-height: 3.3rem;
+  border: 0;
+  border-radius: 999px;
+  padding: 0.85rem 1.4rem;
+  font-weight: 700;
+  color: #04121c;
+  background: linear-gradient(135deg, rgba(34, 211, 238, 0.98), rgba(59, 130, 246, 0.95));
+  box-shadow: 0 18px 34px rgba(34, 211, 238, 0.22);
+  transition: transform 0.22s ease, box-shadow 0.22s ease, opacity 0.22s ease;
+}
+
+.contact-submit-button:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 22px 36px rgba(34, 211, 238, 0.24);
+}
+
+.contact-submit-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
 .myAvtar {
   display: flex;
   justify-content: center !important;
@@ -1400,6 +1581,27 @@ input:focus {
   .assistant-messages,
   .assistant-panel-page .assistant-messages {
     height: 21rem;
+  }
+
+  .work-with-me-row {
+    padding-top: 3rem;
+  }
+
+  .contact-form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-form-card {
+    padding: 1.35rem;
+  }
+
+  .contact-form-footer {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .contact-submit-button {
+    width: 100%;
   }
 
   .assistant-composer {
