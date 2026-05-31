@@ -4,6 +4,7 @@ import Particle from "../Particle";
 import Github from "./Github";
 import Techstack from "./Techstack";
 import Aboutcard from "./AboutCard";
+import ContactForm from "./ContactForm";
 import laptopImg from "../../Assets/about.png";
 import Toolstack from "./Toolstack";
 import { ImPointRight } from "react-icons/im";
@@ -37,8 +38,8 @@ function About() {
             </Col>
           </Row>
 
-          <Row style={{ paddingTop: "60px", paddingBottom: "60px" }}>
-            <Col md={12}>
+          <Row className="work-with-me-row">
+            <Col lg={6} className="work-with-me-copy">
               <h1 className="project-heading">
                 Work <strong className="purple">With Me</strong>
               </h1>
@@ -50,12 +51,12 @@ function About() {
               </p>
               <ul>
                 <li className="about-activity" style={{ marginBottom: "12px" }}>
-                  <ImPointRight /> <span className="purple">LLM application engineering</span> with robust
-                  retrieval, evaluation, and deployment practices.
+                  <ImPointRight /> <span className="purple">LLM application engineering</span> with robust retrieval,
+                  evaluation, and deployment practices.
                 </li>
                 <li className="about-activity" style={{ marginBottom: "12px" }}>
-                  <ImPointRight /> <span className="purple">ML system design</span> that balances performance,
-                  reliability, and cost.
+                  <ImPointRight /> <span className="purple">ML system design</span> that balances performance, reliability,
+                  and cost.
                 </li>
                 <li className="about-activity" style={{ marginBottom: "12px" }}>
                   <ImPointRight /> <span className="purple">Data and API workflows</span> for scalable AI services.
@@ -65,17 +66,13 @@ function About() {
                   business decision support.
                 </li>
               </ul>
-              <p style={{ color: "white", margin: "20px 0" }}>
-                If you are working on a practical AI problem and need engineering support, let us connect.
+              <p className="work-with-me-intro">
+                If you are working on a practical AI problem and need engineering support, send the details here and
+                I will follow up directly.
               </p>
-              <a
-                href="mailto:tumelokonaite@gmail.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="coffee-button"
-              >
-                LET'S CONNECT BY EMAIL
-              </a>
+            </Col>
+            <Col lg={6}>
+              <ContactForm />
             </Col>
           </Row>
 
