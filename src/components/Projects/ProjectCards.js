@@ -5,6 +5,8 @@ import { CgWebsite } from "react-icons/cg";
 import { BsGithub } from "react-icons/bs";
 
 function ProjectCards(props) {
+  const hasActions = props.ghLink || props.demoLink || props.detailsLink;
+
   return (
     <Card className="project-card-view">
       <Card.Img variant="top" src={props.imgPath} alt="card-img" />
@@ -19,27 +21,32 @@ function ProjectCards(props) {
           {props.description}
         </Card.Text>
 
-        {props.ghLink && (
-          <Button
-            variant="primary"
-            href={props.ghLink}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <BsGithub /> &nbsp;GitHub
-          </Button>
-        )}
+        {hasActions && (
+          <div className="project-card-actions">
+            {props.ghLink && (
+              <Button
+                variant="primary"
+                href={props.ghLink}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={`Open GitHub repository for ${props.title}`}
+              >
+                <BsGithub /> &nbsp;{props.ghLabel || "GitHub"}
+              </Button>
+            )}
 
-        {props.demoLink && (
-          <Button
-            variant="primary"
-            href={props.demoLink}
-            target="_blank"
-            rel="noopener noreferrer"
-            style={{ marginLeft: props.ghLink ? "10px" : "0" }}
-          >
-            <CgWebsite /> &nbsp;Demo
-          </Button>
+            {props.demoLink && (
+              <Button
+                variant="primary"
+                href={props.demoLink}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={`Open live demo for ${props.title}`}
+              >
+                <CgWebsite /> &nbsp;{props.demoLabel || "Demo"}
+              </Button>
+            )}
+          </div>
         )}
       </Card.Body>
     </Card>
