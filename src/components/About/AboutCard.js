@@ -20,13 +20,13 @@ function AboutCard() {
 
           <ul>
             <li className="about-activity">
-              <ImPointRight /> <span className="purple">ZenoStudy (Dec 2025 - Present)</span>:
+              <ImPointRight /> <span className="purple">Zeno (Dec 2025 - Present)</span>:
               building AI-powered educational platforms, backend systems, and production-ready services for
               learning experiences, support automation, and digital products such as BeautyVerse.
             </li>
             <br />
             <li className="about-activity">
-              <ImPointRight /> <span className="purple">Huawei Technologies (Dec 2019 - Nov 2025)</span>:
+              <ImPointRight /> <span className="purple">Huawei Technologies (Dec 2019 - Dec 2025)</span>:
               delivered predictive analytics, meeting-intelligence automation, retrieval-based assistants,
               geospatial data pipelines, and telecom optimization models.
             </li>
@@ -36,6 +36,13 @@ function AboutCard() {
             My experience spans predictive analytics, RAG systems, agentic AI applications, backend platform
             development, API engineering, and cloud-native deployment. I enjoy designing modular architectures,
             evaluating technology trade-offs, and building systems that balance performance, cost, and operational simplicity.
+            I deploy production-ready AI and backend systems using Docker, GitHub Actions, serverless platforms,
+            Cloud Run, Vercel, PostgreSQL, and secure environment configuration.
+          </p>
+
+          <p style={{ textAlign: "justify" }}>
+            My MSc research in quantitative finance, derivative pricing, and interest-rate modelling strengthened
+            the mathematical foundation I bring to machine learning, risk modelling, and financial AI use cases.
           </p>
 
           <ul>

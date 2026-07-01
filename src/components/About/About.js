@@ -46,6 +46,9 @@ function About() {
               <p style={{ color: "white", marginBottom: "16px" }}>
                 I help teams move from AI ideas to production-ready systems.
               </p>
+              <p style={{ color: "white", marginBottom: "16px" }}>
+                I am especially useful where AI, data, backend engineering, and product delivery overlap.
+              </p>
               <p style={{ color: "white", marginBottom: "12px" }}>
                 In practice, that usually means:
               </p>
@@ -62,8 +65,8 @@ function About() {
                   <ImPointRight /> <span className="purple">Data and API workflows</span> for scalable AI services.
                 </li>
                 <li className="about-activity" style={{ marginBottom: "12px" }}>
-                  <ImPointRight /> <span className="purple">Production analytics</span> for operational and
-                  business decision support.
+                  <ImPointRight /> <span className="purple">Production analytics and cloud deployment</span> for
+                  operational systems, decision support, and maintainable delivery.
                 </li>
               </ul>
               <p className="work-with-me-intro">
@@ -77,13 +80,13 @@ function About() {
           </Row>
 
           <h1 className="project-heading">
-            Professional <strong className="purple">Skillset </strong>
+            Core <strong className="purple">Skillset </strong>
           </h1>
 
           <Techstack />
 
           <h1 className="project-heading">
-            <strong className="purple">Tools</strong> I Use
+            Supporting <strong className="purple">Tools</strong>
           </h1>
           <Toolstack />
 

@@ -12,7 +12,7 @@ const WELCOME_MESSAGE = {
 };
 
 function AssistantPanel({
-  title = "Talk to Tumelo AI",
+  title = "Talk to My AI Twin",
   subtitle = "Ask about my work, projects, engineering approach, and how I build production AI systems.",
   promptSuggestions = ASSISTANT_PROMPTS,
   showPromptSuggestions = true,
