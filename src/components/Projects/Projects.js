@@ -10,8 +10,42 @@ import Project3 from "../../Assets/Projects/3.png";
 import Project4 from "../../Assets/Projects/4.png";
 import Project5 from "../../Assets/Projects/5.png";
 import Project6 from "../../Assets/Projects/6.png";
+import Project7 from "../../Assets/Projects/7.png";
 
 const featuredProjects = [
+  {
+    imgPath: Project7,
+    title: "LetsGo South Africa - AI-Powered Tourism Platform",
+    description: `Built a full-stack tourism platform for LetsGo South Africa where admins manage travel packages and customers browse listings, submit enquiries, and chat with an AI travel assistant.
+
+Delivered a FastAPI backend, PostgreSQL database, React/Vite frontend, authentication, image workflows, enquiry handling, and cloud deployment.
+
+Skills: FastAPI, React, PostgreSQL, AI Chat, Admin Workflows.`,
+    demoLink: "https://letsgodb.web.app/",
+    demoLabel: "Website",
+  },
+  {
+    imgPath: Project2,
+    title: "BeautyVerse - Beauty Services Marketplace",
+    description: `Built a beauty services marketplace where providers create and manage service listings while customers browse beauty services and submit enquiries.
+
+The platform demonstrates reusable backend architecture, listing management, categories, authentication, image handling, and marketplace-style enquiry flows.
+
+Skills: FastAPI, PostgreSQL, SQLAlchemy, Alembic, Docker.`,
+    demoLink: "https://beautyverse.co.za/",
+    demoLabel: "Website",
+  },
+  {
+    imgPath: Project6,
+    title: "MedDesk - AI Clinical Intake Proof of Concept",
+    description: `Built an AI-assisted clinical intake proof of concept where patients report symptoms before consultation and clinicians receive structured draft SOAP notes with surfaced red flags.
+
+Designed as clinician-support software to structure intake information and improve review efficiency, not as a replacement for medical judgment.
+
+Skills: FastAPI, Generative AI, Clinical Intake, SOAP Notes, Prompt Engineering.`,
+    demoLink: "https://meddesk.co.za/",
+    demoLabel: "Website",
+  },
   {
     imgPath: Project1,
     title: "AWS Multi-Agent Pricing Intelligence",
@@ -62,15 +96,6 @@ Supported targeted retention strategies through risk scoring and behavioral insi
 Skills: SQL, Python, Classification Models, Business Analytics.`,
     ghLink: "https://github.com/TumeloKonaite/Customer-Churning-Repo",
   },
-  {
-    imgPath: Project6,
-    title: "Healthcare Consultation Summarizer",
-    description: `Built an AI application that converts doctor consultation notes into structured summaries,
-actionable next steps, and patient-ready email communication.
-
-Skills: Generative AI, Prompt Engineering, FastAPI, Real-time Inference.`,
-    ghLink: "https://github.com/TumeloKonaite/Dr_Assistant",
-  },
 ];
 
 const additionalRepositories = [
@@ -93,7 +118,7 @@ function Projects() {
           Featured <strong className="purple">Projects</strong>
         </h1>
         <p style={{ color: "white" }}>
-          A selection of practical AI and machine learning systems built for production-oriented use cases.
+          A selection of production-oriented AI systems, full-stack platforms, and digital products.
         </p>
 
         <Row style={{ justifyContent: "center", paddingBottom: "10px" }}>

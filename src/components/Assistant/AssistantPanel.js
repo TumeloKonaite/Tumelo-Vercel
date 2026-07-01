@@ -1,5 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import { AiOutlineMessage, AiOutlineSend } from "react-icons/ai";
+import ReactMarkdown from "react-markdown";
+import remarkGfm from "remark-gfm";
 import { ASSISTANT_PROMPTS } from "./assistantPrompts";
 
 const WELCOME_MESSAGE = {
@@ -93,6 +95,28 @@ function AssistantPanel({
     }
   };
 
+  const renderMessageContent = (message) => {
+    if (message.role === "user") {
+      return message.content;
+    }
+
+    return (
+      <ReactMarkdown
+        className="assistant-message-markdown"
+        remarkPlugins={[remarkGfm]}
+        components={{
+          a: ({ children, ...props }) => (
+            <a {...props} target="_blank" rel="noopener noreferrer">
+              {children}
+            </a>
+          ),
+        }}
+      >
+        {message.content}
+      </ReactMarkdown>
+    );
+  };
+
   return (
     <div className="assistant-panel assistant-panel-page">
       <div className="assistant-panel-header">
@@ -126,7 +150,7 @@ function AssistantPanel({
               message.role === "user" ? "assistant-message-user" : "assistant-message-assistant"
             }`}
           >
-            {message.content}
+            {renderMessageContent(message)}
           </div>
         ))}
         {isLoading ? (
