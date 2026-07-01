@@ -98,13 +98,13 @@ function NavBar() {
 
             <Nav.Item>
               <Nav.Link as={Link} to="/assistant" onClick={() => updateExpanded(false)}>
-                <AiOutlineMessage style={{ marginBottom: "2px" }} /> Talk to AI
+                <AiOutlineMessage style={{ marginBottom: "2px" }} /> AI Twin
               </Nav.Link>
             </Nav.Item>
 
             <Nav.Item>
               <Nav.Link as={Link} to="/talks" onClick={() => updateExpanded(false)}>
-                <AiOutlineFundProjectionScreen style={{ marginBottom: "2px" }} /> Talks
+                <AiOutlineFundProjectionScreen style={{ marginBottom: "2px" }} /> Talks & Notes
               </Nav.Link>
             </Nav.Item>
 

@@ -48,7 +48,9 @@ function Home2() {
             <p className="home-about-body">
               With an <span className="purple">MSc in Computational and Applied Mathematics</span>, I combine
               quantitative modelling, statistical analysis, and rigorous problem-solving with practical product
-              development and software engineering.
+              development and software engineering. My MSc research focused on quantitative finance, derivative pricing,
+              and interest-rate modelling, giving me a strong mathematical foundation for machine learning, risk modelling,
+              and financial AI applications.
             </p>
           </Col>
 

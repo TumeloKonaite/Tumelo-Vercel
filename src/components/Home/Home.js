@@ -22,15 +22,17 @@ function Home() {
               <div className="observatory-label">Live profile: production AI systems online</div>
               <h1 className="hero-title">
                 Tumelo Konaite
-                <span className="hero-title-accent">Machine learning systems with signal, structure, and intent.</span>
+                <span className="hero-title-accent">Data Scientist, AI Engineer &amp; Software Engineer</span>
               </h1>
               <p className="hero-summary">
-                I build production-ready products at the intersection of data science, artificial intelligence,
-                and software engineering, turning analytics, machine learning, and AI into dependable systems.
+                I build AI-powered software systems, RAG applications, backend APIs, and data platforms using
+                Python, FastAPI, PostgreSQL, cloud infrastructure, and modern LLM tooling.
+                <br />
+                <span className="hero-summary-tagline">Machine learning systems with signal, structure, and intent.</span>
               </p>
 
               <div className="hero-type-shell">
-                <span className="hero-kicker">Tracking now</span>
+                <span className="hero-kicker">Current focus</span>
                 <div className="hero-typewriter">
                   <Type />
                 </div>
@@ -38,7 +40,7 @@ function Home() {
 
               <div className="hero-actions">
                 <Link to="/assistant" className="hero-action-primary">
-                  Talk to my bot
+                  Talk to My AI Twin
                 </Link>
                 <Link to="/project" className="hero-action-primary">
                   View Projects
@@ -58,7 +60,7 @@ function Home() {
                 </div>
                 <div className="hero-metric-card">
                   <span className="hero-metric-value">Platform delivery</span>
-                  <span className="hero-metric-label">Backend systems, APIs, and cloud-native products</span>
+                  <span className="hero-metric-label">Backend systems, APIs, cloud deployment, and product engineering</span>
                 </div>
                 <div className="hero-metric-card">
                   <span className="hero-metric-value">Production-first</span>

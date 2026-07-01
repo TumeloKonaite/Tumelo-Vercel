@@ -9,7 +9,7 @@ function AssistantPage() {
         <div className="assistant-page-hero">
           <span className="assistant-page-kicker">Portfolio chat</span>
           <h1 className="assistant-page-title">
-            Talk to <span>Tumelo AI</span>
+            Talk to <span>My AI Twin</span>
           </h1>
           <p className="assistant-page-summary">
             Ask me about projects, experience, systems design, technical depth,
