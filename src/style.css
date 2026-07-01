@@ -1518,7 +1518,6 @@ input:focus {
   padding: 0.95rem 1rem;
   border-radius: 1rem;
   line-height: 1.65;
-  white-space: pre-wrap;
   word-break: break-word;
 }
 
@@ -1533,6 +1532,67 @@ input:focus {
   color: var(--text-main);
   background: rgba(125, 211, 252, 0.08);
   border: 1px solid rgba(125, 211, 252, 0.12);
+}
+
+.assistant-message-user {
+  white-space: pre-wrap;
+}
+
+.assistant-message-markdown > :first-child {
+  margin-top: 0;
+}
+
+.assistant-message-markdown > :last-child {
+  margin-bottom: 0;
+}
+
+.assistant-message-markdown p,
+.assistant-message-markdown ul,
+.assistant-message-markdown ol,
+.assistant-message-markdown blockquote {
+  margin: 0 0 0.8rem;
+}
+
+.assistant-message-markdown h1,
+.assistant-message-markdown h2,
+.assistant-message-markdown h3,
+.assistant-message-markdown h4 {
+  margin: 0 0 0.65rem;
+  font-family: "Sora", sans-serif;
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+.assistant-message-markdown h1 {
+  font-size: 1.3rem;
+}
+
+.assistant-message-markdown h2 {
+  font-size: 1.15rem;
+}
+
+.assistant-message-markdown h3,
+.assistant-message-markdown h4 {
+  font-size: 1.02rem;
+}
+
+.assistant-message-markdown ul,
+.assistant-message-markdown ol {
+  padding-left: 1.25rem;
+}
+
+.assistant-message-markdown li + li {
+  margin-top: 0.35rem;
+}
+
+.assistant-message-markdown strong {
+  color: var(--text-main);
+  font-weight: 700;
+}
+
+.assistant-message-markdown a {
+  color: var(--accent);
+  text-decoration: underline;
 }
 
 .assistant-composer {
