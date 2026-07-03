@@ -10,11 +10,12 @@ import Project3 from "../../Assets/Projects/3.png";
 import Project4 from "../../Assets/Projects/4.png";
 import Project5 from "../../Assets/Projects/5.png";
 import Project6 from "../../Assets/Projects/6.png";
-import Project7 from "../../Assets/Projects/7.png";
+import Project10 from "../../Assets/Projects/10.png";
+import LetsGoLogo from "../../Assets/Projects/letsg0-logo.png";
 
 const featuredProjects = [
   {
-    imgPath: Project7,
+    imgPath: LetsGoLogo,
     title: "LetsGo South Africa - AI-Powered Tourism Platform",
     description: `Built a full-stack tourism platform for LetsGo South Africa where admins manage travel packages and customers browse listings, submit enquiries, and chat with an AI travel assistant.
 
@@ -45,6 +46,18 @@ Designed as clinician-support software to structure intake information and impro
 Skills: FastAPI, Generative AI, Clinical Intake, SOAP Notes, Prompt Engineering.`,
     demoLink: "https://meddesk.co.za/",
     demoLabel: "Website",
+  },
+  {
+    imgPath: Project10,
+    title: "Synthetic Patient-Doctor Data Pipeline",
+    description: `Built a synthetic clinical consultation dataset pipeline that generates structured doctor-patient records and optional full-consultation audio for downstream AI evaluation.
+
+The system produces JSONL consultation records, clinical extraction outputs, TTS-ready scripts, audio manifests, and Hugging Face export bundles for text and audio datasets.
+
+Skills: Python, Synthetic Data, OpenAI APIs, TTS, Dataset Engineering.`,
+    ghLink: "https://github.com/TumeloKonaite/synthetic_data",
+    demoLink: "https://huggingface.co/datasets/TumeloKonaite/synthetic-patient-dr-data",
+    demoLabel: "Dataset",
   },
   {
     imgPath: Project1,
@@ -102,10 +115,6 @@ const additionalRepositories = [
   {
     name: "tumelo-digital-twin",
     href: "https://github.com/TumeloKonaite/tumelo-digital-twin",
-  },
-  {
-    name: "synthetic_data",
-    href: "https://github.com/TumeloKonaite/synthetic_data",
   },
 ];
 
