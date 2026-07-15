@@ -33,14 +33,17 @@ Flow:
 4. Response is returned to the widget.
 
 Expected backend contract:
-- Request: `{ "message": "text", "session_id": "optional-session-id" }`
-- Response: `{ "response": "text", "session_id": "session-id" }`
+- Browser request: `{ "message": "text", "conversation_id": "optional-conversation-id" }`
+- Upstream request: `{ "message": "text", "conversation_id": "optional-conversation-id", "prompt_version": "v1", "model_config_id": "default" }`
+- Response: `{ "reply": "text", "conversation_id": "conversation-id" }`
 
 ## Vercel Environment Variables
 
 Set these in your Vercel project:
 
 - `CHATBOT_BACKEND_URL` (required): Your chatbot API endpoint
+- `CHATBOT_PROMPT_VERSION`: Server-side fallback for the prompt version
+- `CHATBOT_MODEL_CONFIG_ID`: Server-side fallback for the model configuration ID
 - `CHATBOT_BACKEND_AUTH_TOKEN` (optional): API token sent to backend
 - `CHATBOT_BACKEND_AUTH_HEADER` (optional): Header name for token, default is `Authorization`
 - `CHATBOT_BACKEND_TIMEOUT_MS` (optional): Timeout in milliseconds, default is `30000`
