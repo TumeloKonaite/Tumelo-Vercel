@@ -118,10 +118,15 @@ module.exports = async function handler(req, res) {
       typeof upstreamData === "object" && upstreamData?.conversation_id
         ? upstreamData.conversation_id
         : conversationId;
+    const messageId =
+      typeof upstreamData === "object" && upstreamData?.message_id
+        ? upstreamData.message_id
+        : null;
 
     return res.status(200).json({
       reply,
       conversation_id: resolvedConversationId,
+      message_id: messageId,
       raw: upstreamData,
     });
   } catch (error) {
