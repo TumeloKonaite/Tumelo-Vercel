@@ -46,11 +46,29 @@ module.exports = async function handler(req, res) {
     }
   }
 
-  const { message = "", session_id = null } = payload;
+  const {
+    message = "",
+    conversation_id = "",
+  } = payload;
+
   const userMessage = String(message || "").trim();
+  const conversationId = String(conversation_id || "").trim();
+  const promptVersion = String(
+    process.env.CHATBOT_PROMPT_VERSION || ""
+  ).trim();
+  const modelConfigId = String(
+    process.env.CHATBOT_MODEL_CONFIG_ID || ""
+  ).trim();
 
   if (!userMessage) {
     return res.status(400).json({ error: "message is required" });
+  }
+
+  if (!promptVersion || !modelConfigId) {
+    return res.status(500).json({
+      error:
+        "Server not configured. Missing CHATBOT_PROMPT_VERSION or CHATBOT_MODEL_CONFIG_ID.",
+    });
   }
 
   const controller = new AbortController();
@@ -71,7 +89,9 @@ module.exports = async function handler(req, res) {
       headers,
       body: JSON.stringify({
         message: userMessage,
-        session_id,
+        ...(conversationId ? { conversation_id: conversationId } : {}),
+        prompt_version: promptVersion,
+        model_config_id: modelConfigId,
       }),
       signal: controller.signal,
     });
@@ -94,14 +114,14 @@ module.exports = async function handler(req, res) {
     }
 
     const reply = extractReply(upstreamData) || "I could not generate a response right now.";
-    const resolvedSessionId =
-      typeof upstreamData === "object" && upstreamData?.session_id
-        ? upstreamData.session_id
-        : session_id;
+    const resolvedConversationId =
+      typeof upstreamData === "object" && upstreamData?.conversation_id
+        ? upstreamData.conversation_id
+        : conversationId;
 
     return res.status(200).json({
       reply,
-      session_id: resolvedSessionId || null,
+      conversation_id: resolvedConversationId,
       raw: upstreamData,
     });
   } catch (error) {

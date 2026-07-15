@@ -19,7 +19,7 @@ function AssistantPanel({
 }) {
   const [input, setInput] = useState("");
   const [isLoading, setIsLoading] = useState(false);
-  const [sessionId, setSessionId] = useState(null);
+  const [conversationId, setConversationId] = useState(null);
   const [messages, setMessages] = useState([WELCOME_MESSAGE]);
   const messagesEndRef = useRef(null);
 
@@ -49,7 +49,7 @@ function AssistantPanel({
         },
         body: JSON.stringify({
           message: text,
-          session_id: sessionId,
+          ...(conversationId ? { conversation_id: conversationId } : {}),
         }),
       });
 
@@ -58,8 +58,8 @@ function AssistantPanel({
       if (response.ok) {
         const data = await response.json();
         reply = data.reply || reply;
-        if (data.session_id) {
-          setSessionId(data.session_id);
+        if (data.conversation_id) {
+          setConversationId(data.conversation_id);
         }
       } else {
         const errorData = await response.json().catch(() => ({}));

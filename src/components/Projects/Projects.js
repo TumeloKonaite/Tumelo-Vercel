@@ -11,6 +11,7 @@ import Project4 from "../../Assets/Projects/4.png";
 import Project5 from "../../Assets/Projects/5.png";
 import Project6 from "../../Assets/Projects/6.png";
 import Project10 from "../../Assets/Projects/10.png";
+import BeautyVerseImage from "../../Assets/Projects/beautyverse.png";
 import LetsGoLogo from "../../Assets/Projects/letsg0-logo.png";
 
 const featuredProjects = [
@@ -26,7 +27,7 @@ Skills: FastAPI, React, PostgreSQL, AI Chat, Admin Workflows.`,
     demoLabel: "Website",
   },
   {
-    imgPath: Project2,
+    imgPath: BeautyVerseImage,
     title: "BeautyVerse - Beauty Services Marketplace",
     description: `Built a beauty services marketplace where providers create and manage service listings while customers browse beauty services and submit enquiries.
 
