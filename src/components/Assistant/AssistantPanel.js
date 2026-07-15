@@ -1,5 +1,10 @@
 import React, { useEffect, useRef, useState } from "react";
-import { AiOutlineMessage, AiOutlineSend } from "react-icons/ai";
+import {
+  AiOutlineDislike,
+  AiOutlineLike,
+  AiOutlineMessage,
+  AiOutlineSend,
+} from "react-icons/ai";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 import { ASSISTANT_PROMPTS } from "./assistantPrompts";
@@ -10,6 +15,18 @@ const WELCOME_MESSAGE = {
   content:
     "Hi, I'm Tumelo. Ask me about my projects, experience, or how I design and ship AI systems.",
 };
+
+const COMMENT_MAX_LENGTH = 2000;
+
+function createFeedbackState() {
+  return {
+    rating: null,
+    comment: "",
+    isCommentOpen: false,
+    status: "idle",
+    error: null,
+  };
+}
 
 function AssistantPanel({
   title = "Talk to My AI Twin",
@@ -22,6 +39,22 @@ function AssistantPanel({
   const [conversationId, setConversationId] = useState(null);
   const [messages, setMessages] = useState([WELCOME_MESSAGE]);
   const messagesEndRef = useRef(null);
+
+  const updateMessageFeedback = (messageId, updates) => {
+    setMessages((prev) =>
+      prev.map((message) =>
+        message.id === messageId
+          ? {
+              ...message,
+              feedback: {
+                ...message.feedback,
+                ...updates,
+              },
+            }
+          : message
+      )
+    );
+  };
 
   useEffect(() => {
     messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
@@ -54,10 +87,12 @@ function AssistantPanel({
       });
 
       let reply = "I could not generate a response right now.";
+      let responseDataMessageId = null;
 
       if (response.ok) {
         const data = await response.json();
         reply = data.reply || reply;
+        responseDataMessageId = data.message_id || data.raw?.message_id || null;
         if (data.conversation_id) {
           setConversationId(data.conversation_id);
         }
@@ -72,6 +107,10 @@ function AssistantPanel({
           id: `assistant-${Date.now()}`,
           role: "assistant",
           content: reply,
+          messageId: response.ok ? responseDataMessageId : null,
+          feedback: response.ok && responseDataMessageId
+            ? createFeedbackState()
+            : undefined,
         },
       ]);
     } catch (error) {
@@ -86,6 +125,170 @@ function AssistantPanel({
     } finally {
       setIsLoading(false);
     }
+  };
+
+  const submitFeedback = async (message, rating, comment) => {
+    const normalizedComment = comment.trim() || null;
+
+    updateMessageFeedback(message.id, {
+      rating,
+      comment,
+      status: "submitting",
+      error: null,
+    });
+
+    try {
+      const response = await fetch(
+        `/api/chat/messages/${encodeURIComponent(message.messageId)}/feedback`,
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ rating, comment: normalizedComment }),
+        }
+      );
+
+      if (!response.ok) {
+        const errorData = await response.json().catch(() => ({}));
+        throw new Error(errorData.error || "Could not save feedback.");
+      }
+
+      const feedback = await response.json();
+      updateMessageFeedback(message.id, {
+        rating: feedback.rating || rating,
+        comment: feedback.comment || "",
+        isCommentOpen: false,
+        status: "success",
+        error: null,
+      });
+    } catch (error) {
+      updateMessageFeedback(message.id, {
+        status: "error",
+        error: error.message || "Could not save feedback.",
+      });
+    }
+  };
+
+  const selectRating = (message, rating) => {
+    if (message.feedback.status === "submitting") return;
+
+    if (rating === "down") {
+      updateMessageFeedback(message.id, {
+        rating,
+        isCommentOpen: true,
+        status: "idle",
+        error: null,
+      });
+      return;
+    }
+
+    submitFeedback(message, rating, "");
+  };
+
+  const renderFeedbackControls = (message) => {
+    if (message.role !== "assistant" || !message.messageId || !message.feedback) {
+      return null;
+    }
+
+    const { rating, comment, isCommentOpen, status, error } = message.feedback;
+    const isSubmitting = status === "submitting";
+
+    return (
+      <div className="assistant-feedback">
+        <div
+          className="assistant-feedback-actions"
+          role="group"
+          aria-label="Rate this answer"
+        >
+          <button
+            type="button"
+            className={`assistant-feedback-button ${rating === "up" ? "is-selected" : ""}`}
+            onClick={() => selectRating(message, "up")}
+            disabled={isSubmitting}
+            aria-label="Thumbs up"
+            aria-pressed={rating === "up"}
+          >
+            <AiOutlineLike aria-hidden="true" />
+          </button>
+          <button
+            type="button"
+            className={`assistant-feedback-button ${rating === "down" ? "is-selected" : ""}`}
+            onClick={() => selectRating(message, "down")}
+            disabled={isSubmitting}
+            aria-label="Thumbs down"
+            aria-pressed={rating === "down"}
+          >
+            <AiOutlineDislike aria-hidden="true" />
+          </button>
+          {isSubmitting ? (
+            <span className="assistant-feedback-status" aria-live="polite">
+              Saving...
+            </span>
+          ) : null}
+          {status === "success" ? (
+            <span className="assistant-feedback-status is-success" aria-live="polite">
+              Feedback saved
+            </span>
+          ) : null}
+        </div>
+
+        {isCommentOpen ? (
+          <div className="assistant-feedback-comment">
+            <label htmlFor={`feedback-comment-${message.id}`}>
+              How could this answer be improved? <span>(optional)</span>
+            </label>
+            <textarea
+              id={`feedback-comment-${message.id}`}
+              value={comment}
+              onChange={(event) =>
+                updateMessageFeedback(message.id, {
+                  comment: event.target.value,
+                  status: "idle",
+                  error: null,
+                })
+              }
+              maxLength={COMMENT_MAX_LENGTH}
+              rows={3}
+              disabled={isSubmitting}
+            />
+            <div className="assistant-feedback-comment-footer">
+              <span>{comment.length}/{COMMENT_MAX_LENGTH}</span>
+              <div>
+                <button
+                  type="button"
+                  className="assistant-feedback-text-button"
+                  onClick={() => submitFeedback(message, "down", "")}
+                  disabled={isSubmitting}
+                >
+                  Skip
+                </button>
+                <button
+                  type="button"
+                  className="assistant-feedback-submit"
+                  onClick={() => submitFeedback(message, "down", comment)}
+                  disabled={isSubmitting}
+                >
+                  Submit feedback
+                </button>
+              </div>
+            </div>
+          </div>
+        ) : null}
+
+        {status === "error" ? (
+          <div className="assistant-feedback-error" role="alert">
+            <span>{error}</span>
+            <button
+              type="button"
+              onClick={() => submitFeedback(message, rating, comment)}
+            >
+              Retry
+            </button>
+          </div>
+        ) : null}
+      </div>
+    );
   };
 
   const handleKeyDown = (event) => {
@@ -151,6 +354,7 @@ function AssistantPanel({
             }`}
           >
             {renderMessageContent(message)}
+            {renderFeedbackControls(message)}
           </div>
         ))}
         {isLoading ? (
