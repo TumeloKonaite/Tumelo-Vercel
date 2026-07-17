@@ -1,67 +1,87 @@
 import React from "react";
 import Card from "react-bootstrap/Card";
 import { ImPointRight } from "react-icons/im";
+import { SOCIAL_LINKS } from "../../constants";
 
 function AboutCard() {
   return (
     <Card className="quote-card-view">
       <Card.Body>
         <blockquote className="blockquote mb-0">
-          <p style={{ textAlign: "justify" }}>
-            Hi, I am <span className="purple">Tumelo Konaite</span> from{" "}
-            <span className="purple">Johannesburg, South Africa</span>.
-            <br />
-            <br />
-            I am a <span className="purple">Data Scientist, AI Engineer, and Software Engineer</span> with
-            an MSc in Computational and Applied Mathematics from the University of the Witwatersrand.
-            I build end-to-end systems that combine analytics, machine learning, artificial intelligence,
-            and modern software engineering into scalable, production-ready products.
+          <p style={{ textAlign: "left" }}>
+            <strong>Location:</strong> Johannesburg, South Africa |{" "}
+            <a className="purple" href={SOCIAL_LINKS.linkedin} target="_blank" rel="noreferrer">
+              LinkedIn
+            </a>{" "}
+            |{" "}
+            <a className="purple" href={SOCIAL_LINKS.github} target="_blank" rel="noreferrer">
+              GitHub
+            </a>{" "}
+            |{" "}
+            <a className="purple" href={SOCIAL_LINKS.portfolio} target="_blank" rel="noreferrer">
+              Website
+            </a>
           </p>
 
+          <h2 className="purple" style={{ fontSize: "1.35rem", marginTop: "28px" }}>
+            Summary
+          </h2>
+          <p style={{ textAlign: "justify" }}>
+            Software Engineer focused on building production-ready backend systems, AI-powered applications,
+            and cloud-native solutions. I enjoy learning in public, contributing to open source, and using the
+            internet and modern AI tools to continuously expand my skills. I am passionate about taking ideas
+            from concept to deployment, adapting quickly to new technologies, and solving real-world problems.
+          </p>
+
+          <h2 className="purple" style={{ fontSize: "1.35rem", marginTop: "28px" }}>
+            Professional Experience
+          </h2>
           <ul>
             <li className="about-activity">
-              <ImPointRight /> <span className="purple">Zeno (Dec 2025 - Present)</span>:
-              building AI-powered educational platforms, backend systems, and production-ready services for
-              learning experiences, support automation, and digital products such as BeautyVerse.
+              <ImPointRight /> <span className="purple">Beautyverse | Software Engineer</span>{" "}
+              <strong>(Dec 2025 - Present)</strong>
+              <br />
+              Architecting scalable backend services for Beautyverse&apos;s business management platform and
+              marketplace. My work includes FastAPI services, database design, Keycloak identity and access
+              management, payment and third-party integrations, and automated delivery with AWS, Docker,
+              Linux, CI/CD, and Infrastructure as Code.
             </li>
-            <br />
-            <li className="about-activity">
-              <ImPointRight /> <span className="purple">Huawei Technologies (Dec 2019 - Dec 2025)</span>:
-              delivered predictive analytics, meeting-intelligence automation, retrieval-based assistants,
-              geospatial data pipelines, and telecom optimization models.
+            <li className="about-activity" style={{ marginTop: "16px" }}>
+              <ImPointRight /> <span className="purple">Huawei Technologies | Transmission Data Analyst</span>{" "}
+              <strong>(Feb 2021 - Nov 2025)</strong>
+              <br />
+              Built centralized data pipelines, reporting tools, and automation frameworks for large-scale
+              telecom infrastructure. I used Huawei Cloud, Linux, scripting, and Docker to improve data
+              reliability, auditability, network efficiency, delivery speed, and cost-effectiveness.
             </li>
           </ul>
 
-          <p style={{ textAlign: "justify" }}>
-            My experience spans predictive analytics, RAG systems, agentic AI applications, backend platform
-            development, API engineering, and cloud-native deployment. I enjoy designing modular architectures,
-            evaluating technology trade-offs, and building systems that balance performance, cost, and operational simplicity.
-            I deploy production-ready AI and backend systems using Docker, GitHub Actions, serverless platforms,
-            Cloud Run, Vercel, PostgreSQL, and secure environment configuration.
-          </p>
-
-          <p style={{ textAlign: "justify" }}>
-            My MSc research in quantitative finance, derivative pricing, and interest-rate modelling strengthened
-            the mathematical foundation I bring to machine learning, risk modelling, and financial AI use cases.
-          </p>
-
+          <h2 className="purple" style={{ fontSize: "1.35rem", marginTop: "28px" }}>
+            Core Skills
+          </h2>
           <ul>
             <li className="about-activity">
-              <ImPointRight /> AI-powered educational platforms
+              <ImPointRight /> Backend engineering with Python, FastAPI, Flask, SQLAlchemy, Pydantic, and REST APIs
             </li>
             <li className="about-activity">
-              <ImPointRight /> Retrieval-Augmented Generation and agentic AI systems
+              <ImPointRight /> Generative AI, LLM integration, prompt engineering, RAG, FAISS, and ChromaDB
             </li>
             <li className="about-activity">
-              <ImPointRight /> Customer support automation and marketplace backends
+              <ImPointRight /> Keycloak, OAuth2, OpenID Connect, JWT, RBAC, and SSO
             </li>
             <li className="about-activity">
-              <ImPointRight /> Predictive analytics, machine learning, and cloud-native APIs
+              <ImPointRight /> PostgreSQL, MySQL, Redis, DynamoDB, and MongoDB
+            </li>
+            <li className="about-activity">
+              <ImPointRight /> AWS, Huawei Cloud, Docker, GitHub Actions, Terraform, Ansible, and Linux
+            </li>
+            <li className="about-activity">
+              <ImPointRight /> Pytest, unit, integration, and system testing
             </li>
           </ul>
 
           <p style={{ color: "rgb(155 126 172)" }}>
-            "Build data and AI systems that create real value in production."
+            &quot;Taking ideas from concept to reliable production systems.&quot;
           </p>
           <footer className="blockquote-footer">Tumelo Konaite</footer>
         </blockquote>
